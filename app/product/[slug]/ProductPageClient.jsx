@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import AnnouncementBar from '../components/AnnouncementBar';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import CartDrawer from '../components/CartDrawer';
-import AIChatbot from '../components/AIChatbot';
-import { useCart } from '../contexts/CartContext';
-import productsData from '../data/products.json';
+'use client';
 
-const ProductPage = () => {
-  const { slug } = useParams();
-  const navigate = useNavigate();
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
+import AnnouncementBar from '../../components/AnnouncementBar';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import CartDrawer from '../../components/CartDrawer';
+import AIChatbot from '../../components/AIChatbot';
+import { useCart } from '../../contexts/CartContext';
+import productsData from '../../data/products.json';
+
+export default function ProductPageClient({ slug }) {
+  const router = useRouter();
   const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -22,9 +25,9 @@ const ProductPage = () => {
     if (foundProduct) {
       setProduct(foundProduct);
     } else {
-      navigate('/products');
+      router.push('/products');
     }
-  }, [slug, navigate]);
+  }, [slug, router]);
 
   if (!product) {
     return (
@@ -59,15 +62,15 @@ const ProductPage = () => {
         <nav className="mb-8 text-sm">
           <ol className="flex items-center space-x-2 text-gray-600">
             <li>
-              <a href="/" className="hover:text-gold transition-colors">
+              <Link href="/" className="hover:text-gold transition-colors">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <a href="/products" className="hover:text-gold transition-colors">
+              <Link href="/products" className="hover:text-gold transition-colors">
                 Products
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li className="text-primary font-medium">{product.name}</li>
@@ -77,11 +80,14 @@ const ProductPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Image Gallery */}
           <div>
-            <div className="mb-4">
-              <img
+            <div className="mb-4 relative h-[500px] rounded-lg overflow-hidden">
+              <Image
                 src={product.images[selectedImage]}
                 alt={product.name}
-                className="w-full h-[500px] object-cover rounded-lg"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
             </div>
             <div className="grid grid-cols-4 gap-4">
@@ -89,14 +95,16 @@ const ProductPage = () => {
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`border-2 rounded-lg overflow-hidden transition-all ${
+                  className={`border-2 rounded-lg overflow-hidden transition-all relative h-24 ${
                     selectedImage === index ? 'border-gold' : 'border-transparent'
                   }`}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`${product.name} ${index + 1}`}
-                    className="w-full h-24 object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 25vw, 12vw"
                   />
                 </button>
               ))}
@@ -219,7 +227,7 @@ const ProductPage = () => {
                     : 'border-transparent text-gray-500 hover:text-primary'
                 }`}
               >
-                Reviews ({product.reviews.length})
+                Reviews ({product.reviews?.length || 0})
               </button>
             </nav>
           </div>
@@ -246,7 +254,7 @@ const ProductPage = () => {
               <div>
                 <h3 className="text-xl font-semibold text-primary mb-4">Key Benefits</h3>
                 <ul className="space-y-3">
-                  {product.benefits.map((benefit, index) => (
+                  {product.benefits?.map((benefit, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <svg
                         className="w-6 h-6 text-gold flex-shrink-0 mt-0.5"
@@ -270,31 +278,35 @@ const ProductPage = () => {
 
             {activeTab === 'reviews' && (
               <div className="space-y-6">
-                {product.reviews.map((review) => (
-                  <div key={review.id} className="border-b border-gray-200 pb-6 last:border-0">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <h4 className="font-semibold text-primary">{review.name}</h4>
-                        <div className="flex items-center space-x-1 mt-1">
-                          {[...Array(5)].map((_, i) => (
-                            <svg
-                              key={i}
-                              className={`w-5 h-5 ${
-                                i < review.rating ? 'text-gold' : 'text-gray-300'
-                              }`}
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                          ))}
+                {product.reviews?.length > 0 ? (
+                  product.reviews.map((review) => (
+                    <div key={review.id} className="border-b border-gray-200 pb-6 last:border-0">
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <h4 className="font-semibold text-primary">{review.name}</h4>
+                          <div className="flex items-center space-x-1 mt-1">
+                            {[...Array(5)].map((_, i) => (
+                              <svg
+                                key={i}
+                                className={`w-5 h-5 ${
+                                  i < review.rating ? 'text-gold' : 'text-gray-300'
+                                }`}
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                              </svg>
+                            ))}
+                          </div>
                         </div>
+                        <span className="text-sm text-gray-500">{review.date}</span>
                       </div>
-                      <span className="text-sm text-gray-500">{review.date}</span>
+                      <p className="text-gray-600">{review.comment}</p>
                     </div>
-                    <p className="text-gray-600">{review.comment}</p>
-                  </div>
-                ))}
+                  ))
+                ) : (
+                  <p className="text-gray-500">No reviews yet. Be the first to review this product!</p>
+                )}
               </div>
             )}
           </div>
@@ -305,9 +317,4 @@ const ProductPage = () => {
       <AIChatbot />
     </div>
   );
-};
-
-export default ProductPage;
-
-
-
+}

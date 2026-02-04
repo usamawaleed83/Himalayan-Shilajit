@@ -1,5 +1,5 @@
-// Next.js API configuration - converted from Vite
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+// Next.js API configuration - Using Vercel API Routes
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
 
 export const api = {
   // Products
@@ -35,54 +35,59 @@ export const api = {
     return response.json();
   },
 
-  // Payments
+  // Payments (Mock for now)
   initiateEasypaisaPayment: async (paymentData) => {
-    const response = await fetch(`${API_BASE_URL}/payments/easypaisa/initiate`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(paymentData),
-    });
-    return response.json();
+    // Mock response for Easypaisa
+    return {
+      success: true,
+      data: {
+        transactionRef: `EP-${Date.now()}`,
+        paymentUrl: '#',
+        message: 'Mock Easypaisa payment initiated'
+      }
+    };
   },
 
   initiateBankTransfer: async (paymentData) => {
-    const response = await fetch(`${API_BASE_URL}/payments/bank-transfer/initiate`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(paymentData),
-    });
-    return response.json();
+    // Mock response for Bank Transfer
+    return {
+      success: true,
+      data: {
+        transactionReference: `BT-${Date.now()}`,
+        bankDetails: {
+          accountTitle: 'HerbalSource',
+          accountNumber: '1234567890',
+          bankName: 'Mock Bank',
+          iban: 'PK36MOCK0000001234567890',
+          branch: 'Main Branch'
+        },
+        instructions: 'Please transfer the amount and send screenshot to support.'
+      }
+    };
   },
 
   getPaymentStatus: async (orderNumber) => {
-    const response = await fetch(`${API_BASE_URL}/payments/status/${orderNumber}`);
-    return response.json();
+    return {
+      success: true,
+      data: { status: 'pending' }
+    };
   },
 
-  // AI Services
+  // AI Services (Mock for now)
   getChatbotResponse: async (message, context = {}) => {
-    const response = await fetch(`${API_BASE_URL}/ai/chatbot`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message, context }),
-    });
-    return response.json();
+    return {
+      success: true,
+      data: {
+        response: 'Hello! This is a mock response. The AI chatbot will be connected soon.',
+        context: context
+      }
+    };
   },
 
   getProductRecommendations: async (userId, preferences = {}) => {
-    const response = await fetch(`${API_BASE_URL}/ai/recommendations`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userId, preferences }),
-    });
-    return response.json();
+    return {
+      success: true,
+      data: []
+    };
   },
 };
