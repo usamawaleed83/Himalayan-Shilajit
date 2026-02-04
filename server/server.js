@@ -46,7 +46,8 @@ const connectDB = async () => {
     const mongoURI = process.env.MONGODB_URI;
 
     if (!mongoURI) {
-      throw new Error('MONGODB_URI is not defined in environment variables');
+      console.log('⚠️ MONGODB_URI not found, using in-memory storage for development');
+      return; // Skip MongoDB connection for now
     }
 
     console.log('🔄 Connecting to MongoDB...');
@@ -57,7 +58,6 @@ const connectDB = async () => {
       serverSelectionTimeoutMS: 10000, // Increased timeout for Render
       socketTimeoutMS: 45000,
       maxPoolSize: 10, // Maintain up to 10 socket connections
-      serverSelectionRetryDelayMS: 5000, // Retry every 5 seconds
       family: 4 // Use IPv4, skip trying IPv6
     };
 
@@ -80,21 +80,8 @@ const connectDB = async () => {
 
   } catch (error) {
     console.error('❌ MongoDB connection failed:', error.message);
-    
-    // More specific error handling for production
-    if (error.code === 'ENOTFOUND') {
-      console.error('DNS resolution failed. Check your MongoDB Atlas connection string.');
-    } else if (error.code === 'ECONNREFUSED') {
-      console.error('Connection refused. Check if MongoDB Atlas is accessible.');
-    }
-    
-    // In production, we want to exit if DB connection fails
-    if (process.env.NODE_ENV === 'production') {
-      console.error('Exiting due to database connection failure in production');
-      process.exit(1);
-    }
-    
-    throw error;
+    console.log('⚠️ Continuing without MongoDB - using in-memory storage');
+    // Don't throw error, continue with in-memory storage
   }
 };
 
