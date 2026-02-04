@@ -228,3 +228,5 @@ Order Confirmation Received ✅
 Just add your SMTP credentials to `.env` and restart the server. Emails will automatically send when orders are placed! 🎉
 
 
+
+

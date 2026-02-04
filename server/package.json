@@ -11,6 +11,9 @@
     "test-gemini": "node test-gemini.js",
     "seed": "node scripts/seedProducts.js"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "axios": "^1.6.2",
@@ -24,6 +27,7 @@
     "mongoose": "^8.0.3",
     "multer": "^2.0.2",
     "nodemailer": "^6.9.7",
+    "pdfkit": "^0.17.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

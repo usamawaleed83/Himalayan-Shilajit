@@ -159,3 +159,5 @@ Then open: `http://localhost:5173`
 Your professional e-commerce platform with **Gemini 2.5 Flash AI** and **MongoDB Atlas** is ready! 🚀
 
 
+
+

@@ -1,0 +1,29 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: himalayan-shilajit-backend
+    env: node
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false  # Set this manually in Render dashboard
+      - key: JWT_SECRET
+        sync: false  # Set this manually in Render dashboard
+      - key: FRONTEND_URL
+        sync: false  # Set this manually in Render dashboard
+
+  # Frontend Static Site
+  - type: web
+    name: himalayan-shilajit-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false  # Set this manually in Render dashboard

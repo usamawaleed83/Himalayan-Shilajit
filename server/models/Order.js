@@ -43,6 +43,7 @@ const orderSchema = new mongoose.Schema({
   },
   paymentTransactionId: { type: String },
   bankTransactionReference: { type: String },
+  trackingNumber: { type: String },
   notes: { type: String }
 }, {
   timestamps: true
@@ -57,5 +58,7 @@ orderSchema.pre('validate', async function (next) {
 });
 
 export default mongoose.model('Order', orderSchema);
+
+
 
 

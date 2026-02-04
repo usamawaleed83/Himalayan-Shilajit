@@ -9,7 +9,7 @@ const AboutSection = () => {
                     <div className="lg:w-1/2 relative group">
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1518002171953-a080ee32bed2?w=800"
+                                src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?w=800"
                                 alt="Himalayan Mountains"
                                 className="w-full h-[600px] object-cover transform group-hover:scale-110 transition-transform duration-700"
                             />
