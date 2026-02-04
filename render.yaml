@@ -1,7 +1,7 @@
 services:
   # Backend Web Service
   - type: web
-    name: himalayan-shilajit-backend
+    name: herbalsource-backend
     env: node
     plan: free
     buildCommand: cd server && npm install
@@ -19,7 +19,7 @@ services:
 
   # Frontend Static Site
   - type: web
-    name: himalayan-shilajit-frontend
+    name: herbalsource-frontend
     env: static
     plan: free
     buildCommand: npm install && npm run build

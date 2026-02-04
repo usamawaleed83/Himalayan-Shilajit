@@ -6,9 +6,9 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const heroTexts = [
-    'Pure Himalayan Shilajit',
+    'Pure Natural Wellness',
     'Ancient Wisdom',
-    'Nature\'s Potent Resin',
+    'Nature\'s Potent Herbs',
     'Premium Wellness'
   ];
 
@@ -60,7 +60,7 @@ const HeroSection = () => {
 
           {/* Animated Heading */}
           <h1 className={`text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-            <span className="block mb-2">Pure Himalayan Shilajit</span>
+            <span className="block mb-2">Pure Natural Wellness</span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gold via-gold-light to-gold block">
               for Energy & Wellness
             </span>

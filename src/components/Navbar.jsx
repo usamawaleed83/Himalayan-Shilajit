@@ -20,7 +20,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="text-2xl font-serif font-bold text-primary group-hover:text-gold transition-colors tracking-tight">
-              Himalayan<span className="text-gold">Shilajit</span>
+              Herbal<span className="text-gold">Source</span>
             </div>
           </Link>
 

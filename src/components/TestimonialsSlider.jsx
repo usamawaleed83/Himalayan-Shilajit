@@ -7,7 +7,7 @@ const TestimonialsSlider = () => {
       name: 'Sarah Johnson',
       location: 'California, USA',
       rating: 5,
-      comment: 'I\'ve been using Himalayan Shilajit for 3 months now and the difference is incredible. My energy levels have never been better, and I feel more focused throughout the day. Highly recommend!',
+      comment: 'I\'ve been using HerbalSource products for 3 months now and the difference is incredible. My energy levels have never been better, and I feel more focused throughout the day. Highly recommend!',
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
     },
     {

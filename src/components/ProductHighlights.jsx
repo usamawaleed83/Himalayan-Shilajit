@@ -51,7 +51,7 @@ const ProductHighlights = () => {
           </h2>
           <div className="w-24 h-1 bg-gold mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our premium collection of authentic Himalayan Shilajit products, sourced from the highest altitudes.
+            Discover our premium collection of authentic herbal products, sourced from the finest natural sources.
           </p>
         </div>
 

@@ -50,7 +50,7 @@ const ProductsPage = () => {
             All Products
           </h1>
           <p className="text-lg text-gray-600">
-            Explore our complete collection of premium Himalayan Shilajit products
+            Explore our complete collection of premium natural wellness products
           </p>
         </div>
         {loading ? (

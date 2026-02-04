@@ -71,7 +71,7 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
                             <p>{product.description}</p>
                             <ul className="mt-4 space-y-2">
                                 <li className="flex items-center gap-2">
-                                    <span className="text-gold">✓</span> 100% Pure Himalayan Shilajit
+                                    <span className="text-gold">✓</span> 100% Pure Natural Herbs
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-gold">✓</span> Lab Tested for Purity

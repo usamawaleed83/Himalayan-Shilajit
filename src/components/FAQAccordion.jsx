@@ -6,8 +6,8 @@ const FAQAccordion = () => {
 
   const faqs = [
     {
-      question: 'What is Himalayan Shilajit?',
-      answer: 'Himalayan Shilajit is a natural resin that oozes from rocks in the high mountains of the Himalayas. It is rich in fulvic acid and contains over 84 essential minerals. It has been used in traditional Ayurvedic medicine for thousands of years to promote health, vitality, and longevity.',
+      question: 'What is HerbalSource?',
+      answer: 'HerbalSource specializes in premium natural wellness products sourced from the finest herbs and natural ingredients. Our products are rich in essential nutrients and have been used in traditional medicine for thousands of years to promote health, vitality, and longevity.',
     },
     {
       question: 'How do I use Shilajit?',
@@ -57,7 +57,7 @@ const FAQAccordion = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Everything you need to know about Himalayan Shilajit
+            Everything you need to know about HerbalSource products
           </p>
 
           {/* Search Input */}

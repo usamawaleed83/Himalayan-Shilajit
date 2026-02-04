@@ -12,7 +12,7 @@
 2. Click "New +" → "Web Service"
 3. Connect your Git repository
 4. Configure:
-   - **Name**: `himalayan-shilajit-backend`
+   - **Name**: `herbal-source-backend`
    - **Environment**: `Node`
    - **Build Command**: `cd server && npm install`
    - **Start Command**: `cd server && npm start`
@@ -22,23 +22,23 @@
    ```
    NODE_ENV=production
    MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database
-   JWT_SECRET=your-super-secret-jwt-key
-   FRONTEND_URL=https://your-frontend-service.onrender.com
+   JWT_SECRET=herbal-source-super-secret-jwt-key
+   FRONTEND_URL=https://herbal-source-frontend.onrender.com
    ```
 
-6. Deploy and note the service URL (e.g., `https://your-backend-service.onrender.com`)
+6. Deploy and note the service URL (e.g., `https://herbal-source-backend.onrender.com`)
 
 ### 2. Deploy Frontend (Static Site)
 1. In Render Dashboard, click "New +" → "Static Site"
 2. Connect your Git repository
 3. Configure:
-   - **Name**: `himalayan-shilajit-frontend`
+   - **Name**: `herbal-source-frontend`
    - **Build Command**: `npm install && npm run build`
    - **Publish Directory**: `dist`
 
 4. Add Environment Variables:
    ```
-   VITE_API_URL=https://your-backend-service.onrender.com/api
+   VITE_API_URL=https://herbal-source-backend.onrender.com/api
    ```
 
 5. Deploy
@@ -46,12 +46,12 @@
 ### 3. Update CORS
 After frontend deployment, update the backend environment variable:
 ```
-FRONTEND_URL=https://your-frontend-service.onrender.com
+FRONTEND_URL=https://herbal-source-frontend.onrender.com
 ```
 
 ## Health Checks
-- Backend: `https://your-backend-service.onrender.com/health`
-- Frontend: `https://your-frontend-service.onrender.com`
+- Backend: `https://herbal-source-backend.onrender.com/health`
+- Frontend: `https://herbal-source-frontend.onrender.com`
 
 ## Notes
 - Free tier services may sleep after 15 minutes of inactivity

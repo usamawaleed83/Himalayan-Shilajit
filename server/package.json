@@ -1,7 +1,7 @@
 {
-  "name": "himalayan-shilajit-backend",
+  "name": "herbalsource-backend",
   "version": "1.0.0",
-  "description": "Backend API for Himalayan Shilajit E-Commerce",
+  "description": "Backend API for HerbalSource E-Commerce",
   "main": "server.js",
   "type": "module",
   "scripts": {

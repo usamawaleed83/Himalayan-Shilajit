@@ -32,7 +32,7 @@ const AdminLayout = () => {
             <div className="w-64 bg-primary text-white shadow-xl flex flex-col">
                 <div className="p-6 border-b border-white/10">
                     <h1 className="text-2xl font-serif font-bold text-gold">Admin Panel</h1>
-                    <p className="text-xs text-white/60 mt-1">Himalayan Shilajit</p>
+                    <p className="text-xs text-white/60 mt-1">HerbalSource</p>
                 </div>
 
                 <nav className="flex-1 p-4 space-y-2">

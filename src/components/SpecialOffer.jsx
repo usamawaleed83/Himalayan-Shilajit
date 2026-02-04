@@ -42,7 +42,7 @@ const SpecialOffer = () => {
                         </h2>
 
                         <p className="text-white/80 text-lg mb-8 max-w-xl">
-                            Experience the power of authentic Himalayan Shilajit. Use code <span className="font-mono bg-white/10 px-2 py-1 rounded text-gold font-bold">WELCOME20</span> at checkout.
+                            Experience the power of authentic natural wellness. Use code <span className="font-mono bg-white/10 px-2 py-1 rounded text-gold font-bold">WELCOME20</span> at checkout.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
