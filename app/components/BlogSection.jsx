@@ -5,30 +5,33 @@ const BlogSection = () => {
     const posts = [
         {
             id: 1,
-            title: "The Ultimate Guide to Shilajit: Benefits & Uses",
-            excerpt: "Discover how this ancient resin can transform your daily energy levels and immune health.",
-            image: "https://images.unsplash.com/photo-1544367563-12123d8965cd?w=600",
+            title: "Himalayan Shilajit: 11 Possible Health Benefits",
+            excerpt: "Discover the ancient Himalayan remedy used for thousands of years in Ayurvedic medicine. From promoting longevity and cognitive health to supporting immune function and male fertility, explore what modern science says about this powerful natural supplement.",
+            image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600",
             category: "Wellness",
-            readTime: "5 min read",
-            date: "Dec 28, 2024"
+            readTime: "12 min read",
+            date: "Dec 28, 2024",
+            link: "https://health.clevelandclinic.org/shilajit-benefits"
         },
         {
             id: 2,
-            title: "How to Identify Pure Gold Grade Shilajit",
-            excerpt: "Don't fall for fakes. Learn the fire and solubility tests to ensure you're getting the real deal.",
-            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600",
+            title: "Shilajit: A Natural Phytocomplex with Cognitive Benefits",
+            excerpt: "Scientific research reveals how fulvic acid in Shilajit blocks tau protein aggregation, opening new pathways for Alzheimer's prevention. Learn about this potent antioxidant's neuroprotective properties, traditional uses, and molecular composition backed by peer-reviewed studies.",
+            image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600",
             category: "Education",
-            readTime: "4 min read",
-            date: "Dec 25, 2024"
+            readTime: "15 min read",
+            date: "Dec 25, 2024",
+            link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3296184/"
         },
         {
             id: 3,
-            title: "Morning vs Evening: When Should You Take It?",
-            excerpt: "Optimizing your dosage timing for better sleep, workout performance, and mental clarity.",
-            image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600",
+            title: "Healing with Shilajit: Ancient Wisdom Meets Modern Science",
+            excerpt: "Journey through centuries of healing tradition from Aristotle to Avicenna. Discover why this 'rock-overpowering' substance was prized by ancient physicians, how it traveled the Silk Road, and what modern research reveals about this Ayurvedic adaptogen's therapeutic potential.",
+            image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=600",
             category: "Lifestyle",
-            readTime: "3 min read",
-            date: "Dec 20, 2024"
+            readTime: "10 min read",
+            date: "Dec 20, 2024",
+            link: "https://www.innertraditions.com/blog/healing-with-shilajit"
         }
     ];
 
@@ -89,7 +92,12 @@ const BlogSection = () => {
                                     {post.excerpt}
                                 </p>
 
-                                <a href="#" className="inline-flex items-center text-gold font-semibold hover:text-gold-dark transition-colors text-sm uppercase tracking-wide group/link">
+                                <a 
+                                    href={post.link} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center text-gold font-semibold hover:text-gold-dark transition-colors text-sm uppercase tracking-wide group/link"
+                                >
                                     Read More
                                     <span className="ml-2 transform group-hover/link:translate-x-1 transition-transform">→</span>
                                 </a>
