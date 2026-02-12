@@ -1,6 +1,7 @@
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { CartProvider } from './contexts/CartContext'
+import WhatsAppButton from './components/WhatsAppButton'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${playfair.variable} font-sans`}>
         <CartProvider>
           {children}
+          <WhatsAppButton />
         </CartProvider>
       </body>
     </html>
