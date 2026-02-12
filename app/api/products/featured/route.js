@@ -11,9 +11,9 @@ const products = [
     originalPrice: 9000,
     discount: 33,
     images: [
-      'https://i.ibb.co/PzGG3V0F/WhatsAppImage.jpg',
-      'https://i.ibb.co/PzGG3V0F/WhatsAppImage.jpg',
-      'https://i.ibb.co/PzGG3V0F/WhatsAppImage.jpg'
+      '/images/herbalsource-gift-box.jpg',
+      '/images/herbalsource-gift-box.jpg',
+      '/images/herbalsource-gift-box.jpg'
     ],
     description: 'Premium HerbalSource Shilajit Gift Box - An elegant collection featuring authentic Himalayan Shilajit in a luxurious green presentation box. This complete set includes pure Shilajit resin and a premium measuring spoon, beautifully packaged for gifting or personal use.',
     benefits: [

@@ -12,7 +12,7 @@ const products = [
     slug: 'herbalsource-premium-shilajit-gift-box',
     price: 6000,
     stockQuantity: 100,
-    images: ['https://i.ibb.co/PzGG3V0F/WhatsAppImage.jpg']
+    images: ['/images/herbalsource-gift-box.jpg']
   }
 ];
 
