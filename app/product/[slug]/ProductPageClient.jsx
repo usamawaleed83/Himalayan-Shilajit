@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import AnnouncementBar from '../../components/AnnouncementBar';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import CartDrawer from '../../components/CartDrawer';
@@ -54,7 +53,6 @@ export default function ProductPageClient({ slug }) {
 
   return (
     <div className="min-h-screen">
-      <AnnouncementBar />
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumb */}
