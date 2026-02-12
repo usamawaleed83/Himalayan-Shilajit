@@ -8,38 +8,11 @@ const products = [
   {
     _id: '1',
     id: 1,
-    name: 'Premium HerbalSource Shilajit Resin',
-    slug: 'premium-herbalsource-shilajit-resin',
-    price: 49.99,
+    name: 'HerbalSource Premium Shilajit Gift Box',
+    slug: 'herbalsource-premium-shilajit-gift-box',
+    price: 6000,
     stockQuantity: 100,
     images: ['https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800']
-  },
-  {
-    _id: '2',
-    id: 2,
-    name: 'HerbalSource Shilajit Capsules',
-    slug: 'herbalsource-shilajit-capsules',
-    price: 39.99,
-    stockQuantity: 75,
-    images: ['https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800']
-  },
-  {
-    _id: '3',
-    id: 3,
-    name: 'Shilajit Powder - Organic',
-    slug: 'shilajit-powder-organic',
-    price: 44.99,
-    stockQuantity: 60,
-    images: ['https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800']
-  },
-  {
-    _id: '4',
-    id: 4,
-    name: 'Premium Shilajit Gift Set',
-    slug: 'premium-shilajit-gift-set',
-    price: 89.99,
-    stockQuantity: 25,
-    images: ['https://images.unsplash.com/photo-1571875257727-256c39da42af?w=800']
   }
 ];
 
@@ -91,8 +64,8 @@ export async function POST(request) {
       });
     }
 
-    // Calculate shipping (free over PKR 50)
-    const shipping = subtotal >= 50 ? 0 : 9.99;
+    // Calculate shipping (free over PKR 5000)
+    const shipping = subtotal >= 5000 ? 0 : 200;
     const total = subtotal + shipping;
 
     // Generate order number
