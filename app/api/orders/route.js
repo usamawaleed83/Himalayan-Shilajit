@@ -8,8 +8,8 @@ const products = [
   {
     _id: '1',
     id: 1,
-    name: 'Premium Himalayan Shilajit Resin',
-    slug: 'premium-himalayan-shilajit-resin',
+    name: 'Premium HerbalSource Shilajit Resin',
+    slug: 'premium-herbalsource-shilajit-resin',
     price: 49.99,
     stockQuantity: 100,
     images: ['https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800']
@@ -17,8 +17,8 @@ const products = [
   {
     _id: '2',
     id: 2,
-    name: 'Himalayan Shilajit Capsules',
-    slug: 'himalayan-shilajit-capsules',
+    name: 'HerbalSource Shilajit Capsules',
+    slug: 'herbalsource-shilajit-capsules',
     price: 39.99,
     stockQuantity: 75,
     images: ['https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800']
