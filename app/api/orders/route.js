@@ -94,8 +94,22 @@ export async function POST(request) {
     orders.push(order);
     console.log('✅ Order saved to in-memory storage:', orderNumber);
 
-    // Mock email sending (in production, you'd use a service like Resend or SendGrid)
-    console.log('📧 Mock email sent to:', customer.email);
+    // Send email notifications
+    try {
+      const emailResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/send-order-email`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ order, customer })
+      });
+      
+      if (emailResponse.ok) {
+        console.log('✅ Email notifications sent successfully');
+      } else {
+        console.log('⚠️ Email sending failed, but order was created');
+      }
+    } catch (emailError) {
+      console.error('⚠️ Email error (order still created):', emailError.message);
+    }
 
     console.log('🎉 Order created successfully:', orderNumber);
     
