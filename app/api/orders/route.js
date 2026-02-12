@@ -64,9 +64,9 @@ export async function POST(request) {
       });
     }
 
-    // Calculate shipping (free over PKR 5000)
-    const shipping = subtotal >= 5000 ? 0 : 200;
-    const total = subtotal + shipping;
+    // Calculate shipping (free shipping always)
+    const shipping = 0;
+    const total = subtotal;
 
     // Generate order number
     const orderNumber = `HS-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;

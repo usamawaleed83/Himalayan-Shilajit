@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useCart } from '../contexts/CartContext';
 import { api } from '../utils/api';
-import AnnouncementBar from '../components/AnnouncementBar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CartDrawer from '../components/CartDrawer';
@@ -33,8 +32,8 @@ const CheckoutPageClient = () => {
   });
 
   const subtotal = getCartTotal();
-  const shipping = subtotal >= 50 ? 0 : 9.99;
-  const total = subtotal + shipping;
+  const shipping = 0; // Free shipping always
+  const total = subtotal;
 
   // WhatsApp integration
   const sendWhatsAppOrder = () => {
@@ -195,7 +194,6 @@ const CheckoutPageClient = () => {
   if (items.length === 0 && !orderNumber) {
     return (
       <div className="min-h-screen">
-        <AnnouncementBar />
         <Navbar />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <h2 className="text-3xl font-serif font-bold text-primary mb-4">Your cart is empty</h2>
@@ -214,7 +212,6 @@ const CheckoutPageClient = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <AnnouncementBar />
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Progress Steps */}
