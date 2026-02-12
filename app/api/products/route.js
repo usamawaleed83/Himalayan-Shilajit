@@ -5,8 +5,8 @@ const products = [
   {
     _id: '1',
     id: 1,
-    name: 'HerbalSource Premium Shilajit Gift Box',
-    slug: 'herbalsource-premium-shilajit-gift-box',
+    name: 'HerbalSource Shilajit',
+    slug: 'herbalsource-shilajit',
     price: 6000,
     originalPrice: 9000,
     discount: 33,
@@ -15,19 +15,20 @@ const products = [
       '/images/herbalsource-gift-box.jpg',
       '/images/herbalsource-gift-box.jpg'
     ],
-    description: 'Premium HerbalSource Shilajit Gift Box - An elegant collection featuring authentic Himalayan Shilajit in a luxurious green presentation box. This complete set includes pure Shilajit resin and a premium measuring spoon, beautifully packaged for gifting or personal use.',
+    description: 'HerbalSource Shilajit – Pure Sunlight Activated Himalayan Resin. Discover the purest form of Himalayan energy with HerbalSource Shilajit, harvested from high-altitude mountain rocks and naturally activated in pure sunlight for maximum potency. Our traditional sun-curing process preserves the resin\'s full spectrum minerals, fulvic acid, and bioactive compounds, delivering unmatched purity and strength.',
     benefits: [
-      '100% Pure Himalayan Shilajit',
-      'Elegant premium packaging',
-      'Perfect for gifting',
-      'Includes measuring spoon',
-      'Rich in fulvic acid and 84+ minerals',
-      'Boosts energy and vitality',
-      'Supports immune system',
-      'Enhances cognitive function'
+      '🌞 Sunlight Activated Processing – Naturally cured under direct Himalayan sunlight for superior potency',
+      '🏔️ Himalayan Origin – Sourced from pristine, pollution-free high-altitude regions',
+      '💎 Premium Gold-Grade Resin – Thick, glossy, and mineral-rich for ultimate absorption',
+      '🧪 Lab Tested & Purified – Free from heavy metals and contaminants',
+      '🌿 100% Natural & Authentic – No additives, fillers, or artificial heat processing',
+      'Boosts energy, stamina, and overall vitality',
+      'Enhances immunity and metabolic function',
+      'Supports cognitive performance and focus',
+      'Promotes hormonal balance and healthy aging'
     ],
-    ingredients: '100% Pure Himalayan Shilajit Resin, No additives or fillers',
-    usage: 'Take a pea-sized amount (200-300mg) once or twice daily. Dissolve in warm water, milk, or tea. Best taken on an empty stomach. Use the included measuring spoon for accurate dosing.',
+    ingredients: '100% Pure Himalayan Shilajit Resin - Sunlight activated, no additives, fillers, or artificial heat processing',
+    usage: 'Dissolve a small pea-sized amount in warm water, milk, or tea. Use daily for best results.',
     inStock: true,
     featured: true,
     stockQuantity: 100

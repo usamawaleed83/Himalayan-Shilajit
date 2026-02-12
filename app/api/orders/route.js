@@ -8,8 +8,8 @@ const products = [
   {
     _id: '1',
     id: 1,
-    name: 'HerbalSource Premium Shilajit Gift Box',
-    slug: 'herbalsource-premium-shilajit-gift-box',
+    name: 'HerbalSource Shilajit',
+    slug: 'herbalsource-shilajit',
     price: 6000,
     stockQuantity: 100,
     images: ['/images/herbalsource-gift-box.jpg']

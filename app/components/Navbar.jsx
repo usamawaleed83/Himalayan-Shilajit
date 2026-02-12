@@ -28,16 +28,55 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-1">
-            {['Home', 'About', 'Products', 'Benefits', 'FAQ', 'Blog', 'Contact'].map((item) => (
-              <Link
-                key={item}
-                href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
-              >
-                {item}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            ))}
+            <Link
+              href="/"
+              className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
+            >
+              Home
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <a
+              href="/#about"
+              className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
+            >
+              About
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <Link
+              href="/products"
+              className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
+            >
+              Products
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <a
+              href="/#benefits"
+              className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
+            >
+              Benefits
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a
+              href="/#faq"
+              className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
+            >
+              FAQ
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a
+              href="/#blog"
+              className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
+            >
+              Blog
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a
+              href="/#contact"
+              className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
+            >
+              Contact
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+            </a>
           </div>
 
           {/* Right Actions */}
@@ -121,16 +160,55 @@ const Navbar = () => {
               />
             </div>
 
-            {['Home', 'About', 'Products', 'Benefits', 'FAQ', 'Blog', 'Contact'].map((item) => (
-              <Link
-                key={item}
-                href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item}
-              </Link>
-            ))}
+            <Link
+              href="/"
+              className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <a
+              href="/#about"
+              className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </a>
+            <Link
+              href="/products"
+              className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Products
+            </Link>
+            <a
+              href="/#benefits"
+              className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Benefits
+            </a>
+            <a
+              href="/#faq"
+              className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              FAQ
+            </a>
+            <a
+              href="/#blog"
+              className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </a>
+            <a
+              href="/#contact"
+              className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </a>
             <Link
               href="/products"
               className="block mx-4 mt-4 text-center px-4 py-3 bg-gold text-white rounded-lg font-bold shadow-md hover:bg-gold-dark transition-colors"

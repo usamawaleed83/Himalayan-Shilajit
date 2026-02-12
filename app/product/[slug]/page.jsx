@@ -27,7 +27,8 @@ export async function generateMetadata({ params }) {
           alt: product.name,
         },
       ],
-      type: 'product',
+      type: 'website',
+      siteName: 'HerbalSource',
     },
     twitter: {
       card: 'summary_large_image',

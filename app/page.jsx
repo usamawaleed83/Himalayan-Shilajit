@@ -1,4 +1,3 @@
-import AnnouncementBar from './components/AnnouncementBar';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import ProductHighlights from './components/ProductHighlights';
@@ -67,23 +66,32 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <AnnouncementBar />
       <Navbar />
       <CartDrawer />
 
       <main>
         <HeroSection />
         <ProductHighlights />
-        <BenefitsSection />
-        <AboutSection />
+        <div id="benefits">
+          <BenefitsSection />
+        </div>
+        <div id="about">
+          <AboutSection />
+        </div>
         <SpecialOffer />
         <TestimonialsSlider />
-        <BlogSection />
-        <FAQAccordion />
+        <div id="blog">
+          <BlogSection />
+        </div>
+        <div id="faq">
+          <FAQAccordion />
+        </div>
         {/* <AIRecommendations /> - Hidden for now until AI connection is fixed */}
       </main>
 
-      <Footer />
+      <div id="contact">
+        <Footer />
+      </div>
       <AIChatbot />
     </div>
   );
