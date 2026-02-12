@@ -316,44 +316,6 @@ const CheckoutPageClient = () => {
 
             <div className="space-y-4 mb-8">
               <button
-                onClick={handleEasypaisaPayment}
-                disabled={loading}
-                className="w-full p-6 border-2 border-gray-300 rounded-xl hover:border-gold hover:bg-gold/5 transition-all duration-300 text-left flex items-center justify-between group disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-green/10 rounded-lg flex items-center justify-center">
-                    <span className="text-3xl">📱</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary group-hover:text-gold">Easypaisa</h3>
-                    <p className="text-gray-600">Pay via Easypaisa mobile wallet</p>
-                  </div>
-                </div>
-                <svg className="w-6 h-6 text-gray-400 group-hover:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              <button
-                onClick={handleBankTransfer}
-                disabled={loading}
-                className="w-full p-6 border-2 border-gray-300 rounded-xl hover:border-gold hover:bg-gold/5 transition-all duration-300 text-left flex items-center justify-between group disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <span className="text-3xl">🏦</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary group-hover:text-gold">Bank Transfer</h3>
-                    <p className="text-gray-600">Transfer directly to our bank account</p>
-                  </div>
-                </div>
-                <svg className="w-6 h-6 text-gray-400 group-hover:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              <button
                 onClick={() => {
                   createOrderAndProcessPayment('cash_on_delivery');
                 }}

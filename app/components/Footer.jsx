@@ -26,7 +26,9 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/Herbalsource.store/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-gold transition-colors duration-200"
                 aria-label="Facebook"
               >
@@ -35,7 +37,9 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/herbalsource.store?igsh=MjF6NHRjdnZkN2h3"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-gold transition-colors duration-200"
                 aria-label="Instagram"
               >
@@ -44,12 +48,14 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@herbalsource6?lang=en"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-gold transition-colors duration-200"
-                aria-label="Twitter"
+                aria-label="TikTok"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                 </svg>
               </a>
             </div>
@@ -88,15 +94,15 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-300 text-sm">
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                <span>123 Wellness Ave, Suite 100<br />New York, NY 10001</span>
+                <span>Sialkot, Pakistan</span>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                <a href="mailto:support@herbalsource.com" className="hover:text-gold transition-colors">support@herbalsource.com</a>
+                <a href="mailto:herbalsource.store@gmail.com" className="hover:text-gold transition-colors">herbalsource.store@gmail.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                <a href="tel:+1234567890" className="hover:text-gold transition-colors">+1 (555) 123-4567</a>
+                <a href="tel:+923492832456" className="hover:text-gold transition-colors">+92 349 2832456</a>
               </li>
             </ul>
           </div>
@@ -123,16 +129,6 @@ const Footer = () => {
                 Subscribe
               </button>
             </form>
-
-            {/* Payment Icons */}
-            <div className="mt-6 pt-6 border-t border-white/10">
-              <div className="flex gap-3 grayscale opacity-70">
-                <div className="h-8 w-12 bg-white rounded flex items-center justify-center text-xs text-primary font-bold">VISA</div>
-                <div className="h-8 w-12 bg-white rounded flex items-center justify-center text-xs text-primary font-bold">MC</div>
-                <div className="h-8 w-12 bg-white rounded flex items-center justify-center text-xs text-primary font-bold">AMEX</div>
-                <div className="h-8 w-12 bg-white rounded flex items-center justify-center text-xs text-primary font-bold">PP</div>
-              </div>
-            </div>
           </div>
         </div>
 
