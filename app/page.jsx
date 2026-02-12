@@ -10,7 +10,6 @@ import SpecialOffer from './components/SpecialOffer';
 import AIRecommendations from './components/AIRecommendations';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
-import AIChatbot from './components/AIChatbot';
 
 export const metadata = {
   title: 'HerbalSource - Premium Natural Wellness Products',
@@ -89,7 +88,6 @@ export default function HomePage() {
       <div id="contact">
         <Footer />
       </div>
-      <AIChatbot />
     </div>
   );
 }

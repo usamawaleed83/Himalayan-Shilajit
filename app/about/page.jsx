@@ -1,7 +1,6 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CartDrawer from '../components/CartDrawer';
-import AIChatbot from '../components/AIChatbot';
 import AboutSection from '../components/AboutSection';
 
 export const metadata = {
@@ -21,7 +20,6 @@ export default function AboutPage() {
       </main>
 
       <Footer />
-      <AIChatbot />
     </div>
   );
 }

@@ -8,7 +8,6 @@ import AnnouncementBar from '../../components/AnnouncementBar';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import CartDrawer from '../../components/CartDrawer';
-import AIChatbot from '../../components/AIChatbot';
 import { useCart } from '../../contexts/CartContext';
 import productsData from '../../data/products.json';
 
@@ -314,7 +313,6 @@ export default function ProductPageClient({ slug }) {
       </div>
       <Footer />
       <CartDrawer />
-      <AIChatbot />
     </div>
   );
 }
