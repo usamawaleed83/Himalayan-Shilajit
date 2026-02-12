@@ -75,9 +75,6 @@ export default function HomePage() {
         <div id="benefits">
           <BenefitsSection />
         </div>
-        <div id="about">
-          <AboutSection />
-        </div>
         <SpecialOffer />
         <TestimonialsSlider />
         <div id="blog">

@@ -35,13 +35,13 @@ const Navbar = () => {
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <a
-              href="/#about"
+            <Link
+              href="/about"
               className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
             >
               About
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
-            </a>
+            </Link>
             <Link
               href="/products"
               className="relative px-3 py-2 text-primary hover:text-gold transition-colors duration-200 font-medium rounded-lg hover:bg-gold/5 group text-sm uppercase tracking-wide"
@@ -167,13 +167,13 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <a
-              href="/#about"
+            <Link
+              href="/about"
               className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               About
-            </a>
+            </Link>
             <Link
               href="/products"
               className="block px-4 py-2 text-primary hover:text-gold hover:bg-gold/5 rounded-lg transition-colors duration-200 font-medium"
