@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { api } from '../../utils/api';
-import AnnouncementBar from '../../components/AnnouncementBar';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import CartDrawer from '../../components/CartDrawer';
@@ -52,7 +51,6 @@ const OrderStatusPage = () => {
   if (loading) {
     return (
       <div className="min-h-screen">
-        <AnnouncementBar />
         <Navbar />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold mx-auto"></div>
@@ -67,7 +65,6 @@ const OrderStatusPage = () => {
   if (error || !order) {
     return (
       <div className="min-h-screen">
-        <AnnouncementBar />
         <Navbar />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="text-red-500 mb-4">
@@ -86,7 +83,6 @@ const OrderStatusPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <AnnouncementBar />
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-6">

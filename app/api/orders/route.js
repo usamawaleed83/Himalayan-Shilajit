@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
-
-// In-memory storage for orders
-let orders = [];
+import { getOrders, addOrder } from '../../data/ordersStore';
 
 // Products data for validation
 const products = [
@@ -90,8 +88,8 @@ export async function POST(request) {
       updatedAt: new Date()
     };
 
-    // Save to in-memory storage
-    orders.push(order);
+    // Save to shared in-memory storage
+    addOrder(order);
     console.log('✅ Order saved to in-memory storage:', orderNumber);
 
     // Send email notifications
@@ -130,6 +128,7 @@ export async function POST(request) {
 
 export async function GET() {
   try {
+    const orders = getOrders();
     return NextResponse.json({ 
       success: true, 
       data: orders,

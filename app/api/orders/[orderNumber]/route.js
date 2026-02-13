@@ -1,14 +1,11 @@
 import { NextResponse } from 'next/server';
-
-// This would be shared with the main orders route in a real app
-// For now, we'll use a simple in-memory store
-let orders = [];
+import { getOrderByNumber } from '../../../data/ordersStore';
 
 export async function GET(request, { params }) {
   try {
     const { orderNumber } = params;
     
-    const order = orders.find(o => o.orderNumber === orderNumber);
+    const order = getOrderByNumber(orderNumber);
     
     if (!order) {
       return NextResponse.json({ 

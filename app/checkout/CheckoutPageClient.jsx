@@ -17,6 +17,7 @@ const CheckoutPageClient = () => {
   const [orderNumber, setOrderNumber] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState('');
   const [paymentData, setPaymentData] = useState(null);
+  const [orderTotal, setOrderTotal] = useState(0); // Store order total before cart is cleared
 
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
@@ -34,10 +35,16 @@ const CheckoutPageClient = () => {
   const subtotal = getCartTotal();
   const shipping = 0; // Free shipping always
   const total = subtotal;
+  
+  // Use orderTotal if cart has been cleared (Step 3), otherwise use calculated total
+  const displayTotal = orderTotal > 0 ? orderTotal : total;
 
   // WhatsApp integration
   const sendWhatsAppOrder = () => {
     const whatsappNumber = '923492832456'; // Your WhatsApp number (without + or spaces)
+    
+    // Use orderTotal (saved before cart was cleared) instead of calculating from empty cart
+    const messageTotal = orderTotal > 0 ? orderTotal : total;
     
     // Create order message
     let message = `🛍️ *New Order - HerbalSource*\n\n`;
@@ -51,13 +58,11 @@ const CheckoutPageClient = () => {
     message += `${customerInfo.address.city}, ${customerInfo.address.province}\n`;
     message += `${customerInfo.address.postalCode}, ${customerInfo.address.country}\n\n`;
     message += `🛒 *Order Items:*\n`;
-    items.forEach((item, index) => {
-      message += `${index + 1}. ${item.name} x${item.quantity} - PKR ${(item.price * item.quantity).toFixed(2)}\n`;
-    });
+    message += `HerbalSource Shilajit x1 - PKR ${messageTotal.toFixed(2)}\n`;
     message += `\n💰 *Order Summary:*\n`;
-    message += `Subtotal: PKR ${subtotal.toFixed(2)}\n`;
-    message += `Shipping: ${shipping === 0 ? 'Free' : `PKR ${shipping.toFixed(2)}`}\n`;
-    message += `*Total: PKR ${total.toFixed(2)}*\n\n`;
+    message += `Subtotal: PKR ${messageTotal.toFixed(2)}\n`;
+    message += `Shipping: Free\n`;
+    message += `*Total: PKR ${messageTotal.toFixed(2)}*\n\n`;
     message += `💵 *Payment Method:* Cash on Delivery\n\n`;
     message += `✅ Please confirm this order.`;
 
@@ -99,6 +104,9 @@ const CheckoutPageClient = () => {
       console.log('Creating order with payment method:', selectedPaymentMethod);
       console.log('Customer info:', customerInfo);
       console.log('Items:', items);
+      
+      // Save the order total BEFORE clearing cart
+      setOrderTotal(total);
       
       // First create the order with selected payment method
       const orderData = {
@@ -469,7 +477,7 @@ const CheckoutPageClient = () => {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Amount:</span>
-                      <span className="font-bold text-gold text-lg">PKR {total.toFixed(2)}</span>
+                      <span className="font-bold text-gold text-lg">PKR {displayTotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Transaction Reference:</span>
@@ -503,7 +511,7 @@ const CheckoutPageClient = () => {
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-600">Total Amount:</span>
-                        <span className="font-bold text-gold text-xl">PKR {total.toFixed(2)}</span>
+                        <span className="font-bold text-gold text-xl">PKR {displayTotal.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-600">Payment Method:</span>
@@ -527,7 +535,7 @@ const CheckoutPageClient = () => {
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                     <p className="text-sm text-yellow-800 font-medium mb-2">📦 Delivery Information:</p>
                     <ul className="text-sm text-yellow-700 space-y-1 list-disc list-inside">
-                      <li>Please have the exact amount ready: <strong>PKR {total.toFixed(2)}</strong></li>
+                      <li>Please have the exact amount ready: <strong>PKR {displayTotal.toFixed(2)}</strong></li>
                       <li>Our delivery person will collect payment upon delivery</li>
                       <li>You'll receive a call before delivery</li>
                       <li>Expected delivery: 3-5 business days</li>
